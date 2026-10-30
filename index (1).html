@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Irfan Ali (Hell Coder) | Frontend Developer and creator of iGram</title>
+  <meta name="description" content="Irfan Ali is a frontend developer from Gilgit-Baltistan, Pakistan. He builds responsive websites and web tools, including iGram at igram.pk.">
+  <meta name="author" content="Irfan Ali">
+  <link rel="canonical" href="https://hell-webcoder.github.io/">
+
+  <!-- Social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Irfan Ali (Hell Coder) | Frontend Developer">
+  <meta property="og:description" content="I build responsive websites and web tools. Creator of iGram.">
+  <meta property="og:url" content="https://hell-webcoder.github.io/">
+  <meta name="twitter:card" content="summary">
+
+  <!-- Favicon (emoji, no extra file needed) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Structured data helps Google understand who you are and what you built -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Irfan Ali",
+    "alternateName": "Hell Coder",
+    "jobTitle": "Frontend Developer",
+    "url": "https://hell-webcoder.github.io/",
+    "sameAs": [
+      "https://github.com/hell-webcoder",
+      "https://nextgenarts.pk",
+      "https://igram.pk"
+    ],
+    "address": { "@type": "PostalAddress", "addressRegion": "Gilgit-Baltistan", "addressCountry": "PK" }
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #eef2f8;
+      --surface: #ffffff;
+      --ink: #101a33;
+      --muted: #52607f;
+      --line: #cfd7e6;
+      --accent: #2f45e8;
+      --accent-ink: #ffffff;
+      --signal: #ffb703;
+      --window-top: #dfe5f1;
+      --radius: 14px;
+      color-scheme: light;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #0f1530;
+        --surface: #172042;
+        --ink: #eaf0ff;
+        --muted: #a2afd0;
+        --line: #2b3763;
+        --accent: #8b9bff;
+        --accent-ink: #0f1530;
+        --window-top: #222d57;
+        color-scheme: dark;
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Instrument Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3 {
+      font-family: "Bricolage Grotesque", "Instrument Sans", system-ui, sans-serif;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      margin: 0;
+    }
+    a { color: var(--accent); text-underline-offset: 3px; }
+    a:hover { text-decoration-thickness: 2px; }
+    :focus-visible { outline: 3px solid var(--signal); outline-offset: 3px; border-radius: 4px; }
+
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+    /* Header */
+    header { padding: 22px 0; }
+    header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .brand { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 1.15rem; color: var(--ink); text-decoration: none; }
+    nav { display: flex; gap: 22px; flex-wrap: wrap; }
+    nav a { color: var(--muted); text-decoration: none; font-weight: 500; }
+    nav a:hover { color: var(--ink); }
+
+    /* Hero */
+    .hero { padding: 56px 0 72px; display: grid; gap: 48px; grid-template-columns: 1fr; align-items: center; }
+    @media (min-width: 880px) { .hero { grid-template-columns: 1.05fr 1fr; } }
+    .hero h1 { font-size: clamp(2.5rem, 6vw, 4.4rem); font-weight: 800; }
+    .hero p.lead { color: var(--muted); font-size: 1.2rem; max-width: 34ch; margin: 22px 0 30px; }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block; padding: 13px 22px; border-radius: 10px;
+      font-weight: 600; text-decoration: none; border: 2px solid var(--accent);
+    }
+    .btn.primary { background: var(--accent); color: var(--accent-ink); }
+    .btn.primary:hover { filter: brightness(1.1); }
+    .btn.ghost { color: var(--accent); background: transparent; }
+    .btn.ghost:hover { background: var(--surface); }
+
+    /* The one memorable element: iGram shown as a browser window */
+    .browser {
+      display: block; text-decoration: none; color: inherit;
+      background: var(--surface); border: 2px solid var(--ink);
+      border-radius: var(--radius); overflow: hidden;
+      box-shadow: 10px 10px 0 var(--accent);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .browser:hover { transform: translate(-3px, -3px); box-shadow: 13px 13px 0 var(--accent); }
+    .browser-bar { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: var(--window-top); border-bottom: 2px solid var(--ink); }
+    .dots { display: flex; gap: 6px; }
+    .dots span { width: 11px; height: 11px; border-radius: 50%; background: var(--ink); opacity: .25; }
+    .url { flex: 1; background: var(--surface); border: 1.5px solid var(--line); border-radius: 8px; padding: 4px 12px; font-size: .9rem; font-weight: 600; color: var(--ink); }
+    .browser-body { padding: 34px 28px 38px; }
+    .browser-body .name { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 2.6rem; letter-spacing: -0.03em; }
+    .browser-body .name i { font-style: normal; color: var(--accent); }
+    .browser-body p { color: var(--muted); margin: 8px 0 22px; }
+    .fake-input { height: 46px; border: 2px dashed var(--line); border-radius: 10px; display: flex; align-items: center; padding: 0 14px; color: var(--muted); font-size: .95rem; }
+    .live { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; font-weight: 600; font-size: .95rem; }
+    .live::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: #1fb56b; }
+
+    /* Sections */
+    section { padding: 64px 0; border-top: 1.5px solid var(--line); }
+    section > .wrap > h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 30px; }
+    .about { display: grid; gap: 28px; }
+    @media (min-width: 880px) { .about { grid-template-columns: 1fr 1fr; gap: 56px; } }
+    .about p { margin: 0 0 16px; max-width: 60ch; }
+    dl.facts { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 12px 22px; align-content: start; }
+    dl.facts dt { color: var(--muted); font-weight: 500; }
+    dl.facts dd { margin: 0; font-weight: 600; }
+
+    .projects { display: grid; gap: 18px; grid-template-columns: 1fr; }
+    @media (min-width: 760px) { .projects { grid-template-columns: repeat(3, 1fr); } }
+    .card { background: var(--surface); border: 1.5px solid var(--line); border-radius: var(--radius); padding: 24px; display: flex; flex-direction: column; gap: 10px; }
+    .card.featured { border: 2px solid var(--ink); }
+    .card h3 { font-size: 1.35rem; }
+    .card p { margin: 0; color: var(--muted); flex: 1; }
+    .tag { align-self: flex-start; font-size: .85rem; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: var(--bg); border: 1.5px solid var(--line); }
+    .card .link { font-weight: 600; margin-top: 6px; }
+
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 0; list-style: none; }
+    .skills li { background: var(--surface); border: 1.5px solid var(--line); border-radius: 999px; padding: 8px 18px; font-weight: 600; }
+    .learning { margin-top: 26px; color: var(--muted); max-width: 62ch; }
+
+    .contact-list { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+
+    footer { border-top: 1.5px solid var(--line); padding: 30px 0 44px; color: var(--muted); font-size: .95rem; }
+    footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .browser, .browser:hover { transition: none; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap">
+      <a class="brand" href="#top">Hell Coder</a>
+      <nav aria-label="Main">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="wrap hero">
+      <div>
+        <h1>I build websites and web tools.</h1>
+        <p class="lead">I’m Irfan Ali, a frontend developer from Gilgit-Baltistan, Pakistan, and the creator of iGram.</p>
+        <div class="actions">
+          <a class="btn primary" href="https://igram.pk" target="_blank" rel="noopener">Open iGram</a>
+          <a class="btn ghost" href="#projects">See my projects</a>
+        </div>
+      </div>
+
+      <a class="browser" href="https://igram.pk" target="_blank" rel="noopener" aria-label="Open iGram at igram.pk">
+        <div class="browser-bar">
+          <div class="dots" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="url">igram.pk</div>
+        </div>
+        <div class="browser-body">
+          <div class="name">i<i>Gram</i></div>
+          <p>My main project, live on the web.</p>
+          <div class="fake-input" aria-hidden="true">igram.pk</div>
+          <div class="live">Live now</div>
+        </div>
+      </a>
+    </div>
+
+    <section id="about">
+      <div class="wrap">
+        <h2>About me</h2>
+        <div class="about">
+          <div>
+            <p>I enjoy turning ideas and designs into clean, responsive websites that work well on phones and desktops.</p>
+            <p>I’m still early in my career, and I learn something new with every project. Right now I’m building iGram and working on web projects at NextGen Arts.</p>
+            <p>I’m open to freelance work, collaborations and learning from more experienced developers.</p>
+          </div>
+          <dl class="facts">
+            <dt>Name</dt><dd>Irfan Ali (Hell Coder)</dd>
+            <dt>Role</dt><dd>Frontend Developer</dd>
+            <dt>Location</dt><dd>Gilgit-Baltistan, Pakistan</dd>
+            <dt>Company</dt><dd><a href="https://nextgenarts.pk" target="_blank" rel="noopener">NextGen Arts</a></dd>
+            <dt>Main project</dt><dd><a href="https://igram.pk" target="_blank" rel="noopener">iGram</a></dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <h2>Projects</h2>
+        <div class="projects">
+
+          <article class="card featured">
+            <span class="tag">Live website</span>
+            <h3>iGram</h3>
+            <!-- EDIT: replace this sentence with one clear line about what iGram does -->
+            <p>My main web tool, built and running live at igram.pk. Open it in your browser on any device.</p>
+            <a class="link" href="https://igram.pk" target="_blank" rel="noopener">Visit igram.pk</a>
+          </article>
+
+          <article class="card">
+            <span class="tag">Python</span>
+            <h3>cloner</h3>
+            <p>A website cloner. Give it a link and it copies the site.</p>
+            <a class="link" href="https://github.com/hell-webcoder/cloner" target="_blank" rel="noopener">View on GitHub</a>
+          </article>
+
+          <article class="card">
+            <span class="tag">Python</span>
+            <h3>FeatWise</h3>
+            <!-- EDIT: describe what FeatWise does -->
+            <p>A Python project. More details are on GitHub.</p>
+            <a class="link" href="https://github.com/hell-webcoder/FeatWise" target="_blank" rel="noopener">View on GitHub</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <h2>Skills</h2>
+        <ul class="skills">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>React</li>
+          <li>Tailwind CSS</li>
+          <li>Python</li>
+          <li>Git and GitHub</li>
+        </ul>
+        <p class="learning">Currently learning Next.js, TypeScript and Node.js, with a focus on fast, SEO-friendly websites.</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <h2>Contact</h2>
+        <p>Need a website or want to work together? Reach out through any of these.</p>
+        <div class="contact-list">
+          <a class="btn primary" href="https://nextgenarts.pk" target="_blank" rel="noopener">NextGen Arts</a>
+          <a class="btn ghost" href="https://github.com/hell-webcoder" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn ghost" href="https://www.linkedin.com/company/nextgenartsinc" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn ghost" href="https://igram.pk" target="_blank" rel="noopener">iGram</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© <span id="year">2026</span> Irfan Ali (Hell Coder)</span>
+      <span>Built with HTML and CSS, hosted on GitHub Pages</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
